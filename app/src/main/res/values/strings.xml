@@ -40,7 +40,7 @@
     <string name="maa_reclamation">生息演算</string>
     <string name="maa_custom">自定任务</string>
     <string name="maa_close_down">关闭游戏</string>
-    <string name="maa_start_up">开始唤醒</string>
+    <string name="maa_start_up">淘宝任务</string>
     <string name="maa_depot">仓库识别</string>
     <string name="maa_oper_box">干员识别</string>
     <string name="maa_paradox_copilot">悖论模拟</string>
@@ -841,7 +841,7 @@
     <string name="panel_config_editing_badge">正在编辑</string>
     <string name="panel_config_task_name_label">任务名称</string>
     <string name="panel_config_unknown_task_type">未知任务</string>
-    <string name="panel_task_type_wake_up">开始唤醒</string>
+    <string name="panel_task_type_wake_up">淘宝任务</string>
     <string name="panel_task_type_recruiting">自动公招</string>
     <string name="panel_task_type_base">基建换班</string>
     <string name="panel_task_type_combat">理智作战</string>
@@ -1354,7 +1354,7 @@
 
     <!-- panel: wake up -->
     <string name="panel_wakeup_client_type">客户端类型</string>
-    <string name="panel_wakeup_client_official">官服</string>
+    <string name="panel_wakeup_client_official">淘宝</string>
     <string name="panel_wakeup_client_bilibili">B服</string>
     <string name="panel_wakeup_client_yostar_en">国际服 (YoStarEN)</string>
     <string name="panel_wakeup_client_yostar_jp">日服 (YoStarJP)</string>
@@ -2215,7 +2215,7 @@ MAA 不会因为取消勾选此选项而提前在局内结束探索</string>
     <string name="log_level_rare">稀有</string>
 
     <!-- i18n: task type names (默认任务链节点名；EN 刻意比 panel_task_type_* 标签更简短) -->
-    <string name="task_type_wake_up">开始唤醒</string>
+    <string name="task_type_wake_up">淘宝任务</string>
     <string name="task_type_recruiting">自动公招</string>
     <string name="task_type_base">基建换班</string>
     <string name="task_type_combat">理智作战</string>

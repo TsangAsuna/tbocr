@@ -12,9 +12,10 @@ enum class TaskTypeInfo(
     /** 新用户默认任务列表里是否勾选 */
     val enabledByDefault: Boolean = false,
 ) {
+    // tbocr：默认链只有「淘宝任务」（StartUp 启动淘宝并进入 TB# 淘宝任务循环）
     WAKE_UP(R.string.task_type_wake_up, { WakeUpConfig() }, enabledByDefault = true),
-    RECRUITING(R.string.task_type_recruiting, { RecruitConfig() }, enabledByDefault = true),
-    BASE(R.string.task_type_base, { InfrastConfig() }, enabledByDefault = true),
+    RECRUITING(R.string.task_type_recruiting, { RecruitConfig() }),
+    BASE(R.string.task_type_base, { InfrastConfig() }),
     COMBAT(R.string.task_type_combat, { FightConfig() }),
     MALL(R.string.task_type_mall, { MallConfig() }),
     MISSION(R.string.task_type_mission, { AwardConfig() }),

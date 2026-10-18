@@ -51,13 +51,9 @@ data class WakeUpConfig(
         /**
          * 客户端类型选项值列表
          */
+        // tbocr：只支持淘宝
         val CLIENT_TYPES = listOf(
             "Official",
-            "Bilibili",
-            "YoStarEN",
-            "YoStarJP",
-            "YoStarKR",
-            "txwy"
         )
 
         /**

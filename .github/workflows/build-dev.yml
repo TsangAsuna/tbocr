@@ -87,6 +87,20 @@ jobs:
           fi
           python scripts/setup_maa_core.py --clean $TAG_ARG $REPO_ARG $MAAFW_ARG
 
+      - name: Trim resource for Taobao shell (keep OCR models only)
+        run: |
+          RES=app/src/main/assets/MaaSync/MaaResource
+          # 明日方舟专属大体量数据删除（保留小体量 json 骨架保证 MaaCore LoadResource 兼容）
+          rm -rf $RES/copilot $RES/custom_infrast $RES/global                  $RES/Arknights-Tile-Pos $RES/roguelike $RES/battle
+          # base tasks 换成淘宝任务 pipeline（MaaCore 读 tasks/tasks.json）
+          rm -rf $RES/tasks
+          mkdir -p $RES/tasks
+          cp app/src/main/assets/overrides/resource/tasks/tasks.json $RES/tasks/tasks.json
+          # 同步到 MaaCore 读取的另一个源位置
+          cp app/src/main/assets/overrides/resource/tasks/tasks.json $RES/tasks.json
+          ls -la $RES
+          du -sh $RES
+
       - name: Print MAA Resource version
         run: cat app/src/main/assets/MaaSync/MaaResource/version.json
 

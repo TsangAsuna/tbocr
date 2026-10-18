@@ -7,38 +7,322 @@
   },
   "TB#打开任务面板": {
     "algorithm": "OcrDetect",
-    "text": ["赚金币", "赚能量"],
-    "roi": [0, 950, 1264, 400],
-    "action": "Click",
-    "next": ["TB#做任务循环"],
-    "onError": ["TB#做任务循环"]
+    "text": [
+      "赚金币",
+      "赚能量"
+    ],
+    "roi": [
+      0,
+      440,
+      1264,
+      220
+    ],
+    "action": "ClickSelf",
+    "postDelay": 2000,
+    "next": [
+      "TB#做任务循环",
+      "TB#打开任务面板"
+    ]
   },
   "TB#做任务循环": {
     "algorithm": "OcrDetect",
-    "text": ["去完成", "去逛逛"],
-    "roi": [900, 600, 364, 1900],
+    "text": [
+      "去完成",
+      "去逛逛"
+    ],
+    "roi": [
+      900,
+      280,
+      340,
+      900
+    ],
     "action": "ClickSelf",
-    "next": ["TB#浏览计时", "TB#做任务循环"],
-    "onError": ["TB#返回面板"]
+    "postDelay": 2500,
+    "next": [
+      "TB#浏览1",
+      "TB#做任务循环",
+      "TB#返回任务页"
+    ]
   },
-  "TB#浏览计时": {
+  "TB#浏览1": {
     "algorithm": "JustReturn",
     "action": "Swipe",
-    "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 },
-    "post_delay": 800,
-    "next": ["TB#浏览计时2"]
+    "specificRect": [
+      630,
+      940,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      600,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览2"
+    ]
   },
-  "TB#浏览计时2": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时3"] },
-  "TB#浏览计时3": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时4"] },
-  "TB#浏览计时4": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时5"] },
-  "TB#浏览计时5": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时6"] },
-  "TB#浏览计时6": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时7"] },
-  "TB#浏览计时7": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时8"] },
-  "TB#浏览计时8": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时9"] },
-  "TB#浏览计时9": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时10"] },
-  "TB#浏览计时10": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 500, "next": ["TB#按返回键"] },
-  "TB#按返回键": {
+  "TB#浏览2": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      880,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      650,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览3"
+    ]
+  },
+  "TB#浏览3": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      940,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      600,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览4"
+    ]
+  },
+  "TB#浏览4": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      880,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      650,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览5"
+    ]
+  },
+  "TB#浏览5": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      940,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      600,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览6"
+    ]
+  },
+  "TB#浏览6": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      880,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      650,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览7"
+    ]
+  },
+  "TB#浏览7": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      940,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      600,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览8"
+    ]
+  },
+  "TB#浏览8": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      880,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      650,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览9"
+    ]
+  },
+  "TB#浏览9": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      940,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      600,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 900,
+    "next": [
+      "TB#浏览10"
+    ]
+  },
+  "TB#浏览10": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificRect": [
+      630,
+      880,
+      10,
+      10
+    ],
+    "rectMove": [
+      630,
+      650,
+      10,
+      10
+    ],
+    "specialParams": [
+      600
+    ],
+    "postDelay": 800,
+    "next": [
+      "TB#返回任务页"
+    ]
+  },
+  "TB#返回键": {
     "algorithm": "JustReturn",
     "action": "Stop"
+  },
+  "TB#返回任务页": {
+    "algorithm": "OcrDetect",
+    "text": [
+      "去完成",
+      "去逛逛",
+      "做任务赚能量",
+      "赚金币抵钱",
+      "累计任务奖励"
+    ],
+    "roi": [
+      0,
+      0,
+      1264,
+      1200
+    ],
+    "action": "DoNothing",
+    "next": [
+      "TB#淘宝任务循环"
+    ]
+  },
+  "StartUp": {
+    "algorithm": "JustReturn",
+    "action": "DoNothing",
+    "next": [
+      "TB#淘宝任务循环"
+    ]
+  },
+  "TB#淘宝任务循环": {
+    "algorithm": "OcrDetect",
+    "text": [
+      "去完成",
+      "去逛逛"
+    ],
+    "roi": [
+      900,
+      280,
+      340,
+      900
+    ],
+    "action": "ClickSelf",
+    "postDelay": 2500,
+    "next": [
+      "TB#浏览1",
+      "TB#淘宝任务循环",
+      "TB#返回任务页"
+    ]
   }
 }

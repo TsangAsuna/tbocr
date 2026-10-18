@@ -208,9 +208,8 @@ class MaaResourceLoader(
 
     /** 确保活动关卡与热更 tasks.json 就位，刚拉过会复用 */
     private suspend fun refreshHotUpdate(clientType: String) {
-        withTimeout(30_000.milliseconds) {
-            withContext(Dispatchers.IO) { activityManager.load(clientType) }
-        }
+        // tbocr：淘宝壳不需要明日方舟活动关卡/热更 tasks，跳过网络拉取
+        return
     }
 
     /** 存在性按 App 侧目录判断：独立目录下内置资源、热更、用户文件两侧一致 */
