@@ -32,11 +32,16 @@ object DefaultDisplayConfig {
      * 根据用户偏好 + clientType 解析最终分辨率。
      * YoStarEN 静默强制 1080p；其他客户端使用用户偏好。
      */
+    /** tbocr：淘宝竖版布局，后台虚拟屏用竖屏 720x1280 */
+    val RES_TAOBAO_PORTRAIT = Resolution(720, 1280, 160)
+
     fun resolveResolution(
         clientType: String,
         preference: ResolutionPreference
     ): Resolution {
         if (clientType == "YoStarEN") return RES_1080P
+        // tbocr：淘宝（Official）使用竖屏虚拟屏，匹配竖版页面布局
+        if (clientType == "Official") return RES_TAOBAO_PORTRAIT
         return when (preference) {
             ResolutionPreference.P720 -> RES_720P
             ResolutionPreference.P1080 -> RES_1080P

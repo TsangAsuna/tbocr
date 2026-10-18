@@ -116,10 +116,8 @@ fun AppNavigation(
     val language by appSettings.language.collectAsStateWithLifecycle()
     val announcementContent by announcementManager.content.collectAsStateWithLifecycle()
 
-    // 远端公告：ETag 条件请求，304（内容未变）不会触发弹窗；语言切换时重拉
-    LaunchedEffect(language) {
-        announcementManager.refresh(language)
-    }
+    // tbocr：淘宝壳不展示 MAA 公告（不拉远端内容）
+    // LaunchedEffect(language) { announcementManager.refresh(language) }
 
     // 首启引导：资源就绪后自动开始
     val needsOnboarding by appSettings.needsOnboarding.collectAsStateWithLifecycle()

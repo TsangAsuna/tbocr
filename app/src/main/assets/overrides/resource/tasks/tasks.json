@@ -13,9 +13,9 @@
     ],
     "roi": [
       0,
-      440,
-      1264,
-      220
+      470,
+      720,
+      130
     ],
     "action": "ClickSelf",
     "postDelay": 2000,
@@ -48,14 +48,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      940,
+      360,
+      1050,
       10,
       10
     ],
     "rectMove": [
-      630,
-      600,
+      360,
+      620,
       10,
       10
     ],
@@ -71,14 +71,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      880,
+      360,
+      700,
       10,
       10
     ],
     "rectMove": [
-      630,
-      650,
+      360,
+      1000,
       10,
       10
     ],
@@ -94,14 +94,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      940,
+      360,
+      1050,
       10,
       10
     ],
     "rectMove": [
-      630,
-      600,
+      360,
+      620,
       10,
       10
     ],
@@ -117,14 +117,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      880,
+      360,
+      700,
       10,
       10
     ],
     "rectMove": [
-      630,
-      650,
+      360,
+      1000,
       10,
       10
     ],
@@ -140,14 +140,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      940,
+      360,
+      1050,
       10,
       10
     ],
     "rectMove": [
-      630,
-      600,
+      360,
+      620,
       10,
       10
     ],
@@ -163,14 +163,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      880,
+      360,
+      700,
       10,
       10
     ],
     "rectMove": [
-      630,
-      650,
+      360,
+      1000,
       10,
       10
     ],
@@ -186,14 +186,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      940,
+      360,
+      1050,
       10,
       10
     ],
     "rectMove": [
-      630,
-      600,
+      360,
+      620,
       10,
       10
     ],
@@ -209,14 +209,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      880,
+      360,
+      700,
       10,
       10
     ],
     "rectMove": [
-      630,
-      650,
+      360,
+      1000,
       10,
       10
     ],
@@ -232,14 +232,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      940,
+      360,
+      1050,
       10,
       10
     ],
     "rectMove": [
-      630,
-      600,
+      360,
+      620,
       10,
       10
     ],
@@ -255,14 +255,14 @@
     "algorithm": "JustReturn",
     "action": "Swipe",
     "specificRect": [
-      630,
-      880,
+      360,
+      700,
       10,
       10
     ],
     "rectMove": [
-      630,
-      650,
+      360,
+      1000,
       10,
       10
     ],
@@ -290,8 +290,8 @@
     "roi": [
       0,
       0,
-      1264,
-      1200
+      720,
+      640
     ],
     "action": "DoNothing",
     "next": [
@@ -312,10 +312,10 @@
       "去逛逛"
     ],
     "roi": [
-      900,
-      280,
-      340,
-      900
+      513,
+      129,
+      194,
+      460
     ],
     "action": "ClickSelf",
     "postDelay": 2500,
