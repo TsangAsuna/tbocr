@@ -1,0 +1,44 @@
+{
+  "RelaunchAnchor@RA@RA1-DoubleSpeed": {
+    "templThreshold": 0.7
+  },
+  "InfrastEnteredFlag": {
+    "templThreshold": 0.85
+  },
+  "TB#打开任务面板": {
+    "algorithm": "OcrDetect",
+    "text": ["赚金币", "赚能量"],
+    "roi": [0, 950, 1264, 400],
+    "action": "Click",
+    "next": ["TB#做任务循环"],
+    "onError": ["TB#做任务循环"]
+  },
+  "TB#做任务循环": {
+    "algorithm": "OcrDetect",
+    "text": ["去完成", "去逛逛"],
+    "roi": [900, 600, 364, 1900],
+    "action": "ClickSelf",
+    "next": ["TB#浏览计时", "TB#做任务循环"],
+    "onError": ["TB#返回面板"]
+  },
+  "TB#浏览计时": {
+    "algorithm": "JustReturn",
+    "action": "Swipe",
+    "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 },
+    "post_delay": 800,
+    "next": ["TB#浏览计时2"]
+  },
+  "TB#浏览计时2": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时3"] },
+  "TB#浏览计时3": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时4"] },
+  "TB#浏览计时4": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时5"] },
+  "TB#浏览计时5": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时6"] },
+  "TB#浏览计时6": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时7"] },
+  "TB#浏览计时7": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时8"] },
+  "TB#浏览计时8": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时9"] },
+  "TB#浏览计时9": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 2000], "end": [630, 1300], "duration": 600 }, "post_delay": 800, "next": ["TB#浏览计时10"] },
+  "TB#浏览计时10": { "algorithm": "JustReturn", "action": "Swipe", "specificSwipe": { "begin": [630, 1900], "end": [630, 1400], "duration": 600 }, "post_delay": 500, "next": ["TB#按返回键"] },
+  "TB#按返回键": {
+    "algorithm": "JustReturn",
+    "action": "Stop"
+  }
+}

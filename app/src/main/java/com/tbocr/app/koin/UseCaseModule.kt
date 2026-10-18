@@ -1,0 +1,71 @@
+package com.tbocr.app.koin
+
+import com.tbocr.app.data.config.MaaPathConfig
+import com.tbocr.app.domain.usecase.AnalyzeTaskChainUseCase
+import com.tbocr.app.domain.usecase.CheckGameReadinessUseCase
+import com.tbocr.app.domain.usecase.PrepareTaskStartUseCase
+import com.tbocr.app.domain.usecase.SwitchCoreDataLocationUseCase
+import com.tbocr.app.manager.RemoteServiceManager
+import com.tbocr.app.utils.EyeProtectionDetector
+import com.tbocr.app.utils.device.XiaomiAdbInput
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.module
+import timber.log.Timber
+
+
+val useCaseModule = module {
+    factory { SwitchCoreDataLocationUseCase(get(), get()) }
+
+    factory {
+        AnalyzeTaskChainUseCase(
+            taskChainState = get(),
+            resourceDataManager = get(),
+            activityManager = get(),
+            depotRepository = get(),
+            operBoxRepository = get(),
+            itemHelper = get(),
+            dropsRefresher = get(),
+            appSettingsManager = get(),
+            metadataGate = get(),
+            relocatePath = get<MaaPathConfig>()::toCorePath,
+        )
+    }
+    factory {
+        CheckGameReadinessUseCase(
+            appAliveChecker = get(),
+            appSettings = get(),
+            achievementReporter = get(),
+            isPackageInstalled = { packageName ->
+                withContext(Dispatchers.IO) {
+                    try {
+                        RemoteServiceManager.getInstanceOrNull()
+                            ?.isPackageInstalled(packageName) ?: true
+                    } catch (e: Exception) {
+                        Timber.w(e, "isPackageInstalled check failed for %s", packageName)
+                        true
+                    }
+                }
+            },
+            isEyeProtectionEnabled = { EyeProtectionDetector.isEyeProtectionEnabled(androidContext()) },
+            isSmartResolutionEnabled = {
+                withContext(Dispatchers.IO) {
+                    try {
+                        RemoteServiceManager.getInstanceOrNull()?.isSmartResolutionEnabled() ?: false
+                    } catch (e: Exception) {
+                        Timber.w(e, "isSmartResolutionEnabled check failed")
+                        false
+                    }
+                }
+            },
+            isAdbInputRestricted = XiaomiAdbInput::isRestricted,
+        )
+    }
+    factory {
+        PrepareTaskStartUseCase(
+            analyzeTaskChainUseCase = get(),
+            checkGameReadiness = get(),
+        )
+    }
+}
